@@ -3,12 +3,24 @@ This effort will look to take data from the al-I’rāb al-Mufassal (by Bahjat A
 
 
 # Flask API Doc
-you need to have `docker` installed
 
-just run the start.sh file in sudo mode
-```sudo sh start.sh```
+## Steps to run the app
 
-the container will start
+### Easy method
+
+- Run start.sh using `sh start.sh` to run it locally in port 80
+- Run docker.sh using `sh docker.sh` to run it in docker in port 8000
+
+### Advanced Method
+
+- Install python 3.9 (ideally)
+- Install poetry by using `pip install poetry`
+- Navigate to flask_app directory from command line `cd flask_app`
+- Install the required library using `poetry install --with dev`
+- To run localally `poetry run poe local_run`
+- To run in a docker container `poetry run poe docker_run`
+- To run localally `poetry run poe docker_clean`
+
 
 ## Run it through python
 ```shell
