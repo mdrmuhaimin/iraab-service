@@ -1,0 +1,29 @@
+[tool.poetry]
+name = "iraab-service"
+version = "0.1.0"
+description = ""
+authors = ["Your Name <you@example.com>"]
+readme = "README.md"
+packages = [{include = "iraab_service"}]
+
+[tool.poetry.dependencies]
+python = "3.9.*"
+Flask = "^2.3.2"
+beautifulsoup4 = "^4.12.2"
+convert-numbers = "^0.4"
+
+[tool.poetry.group.dev.dependencies]
+black = "^23.3.0"
+isort = "^5.12.0"
+flake8 = "^6.0.0"
+gunicorn = "^20.1.0"
+poethepoet = "^0.20.0"
+
+[tool.poe.tasks]
+local_run = "gunicorn --conf app/gunicorn_conf.py --bind 0.0.0.0:80 app.main:app"
+docker_run = "docker-compose up --build"
+docker_clean = "docker-compose down --rmi all --volumes --remove-orphans"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
