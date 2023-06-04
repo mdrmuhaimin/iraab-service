@@ -17,7 +17,7 @@ def home():
     return "hello world!"
 
 
-@app.route("/irreb", methods=["GET"])
+@app.route("/irreb", methods=["POST", "GET"])
 def irreb():
     # curl -X GET -H "Content-type: application/json" -d "{\"surah\" : \"10\", \"ayah\" : \"1\", \"word\" : \"1\"}" "localhost:56733/irreb"
     response_json = {}
