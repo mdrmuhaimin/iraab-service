@@ -7,7 +7,7 @@ readme = "README.md"
 packages = [{include = "iraab_service"}]
 
 [tool.poetry.dependencies]
-python = "3.9.*"
+python = "^3.9"
 Flask = "^2.3.2"
 beautifulsoup4 = "^4.12.2"
 convert-numbers = "^0.4"
