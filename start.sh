@@ -1,6 +1,6 @@
 #!/bin/bash
-app="docker.test"
-docker build -t ${app} .
-docker run -d -p 56733:80 \
-  --name=${app} \
-  -v $PWD:/app ${app}
+cd flask_app
+pip install poetry
+poetry install --with dev
+poetry run poe local_run
+
